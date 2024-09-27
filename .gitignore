@@ -1,0 +1,23 @@
+# Ignorar la caché, logs y sesiones de Symfony
+/var/cache/
+/var/log/
+/var/sessions/
+
+# Ignorar las dependencias instaladas por Composer
+/vendor/
+
+/.env
+/.env.local
+/.env.*.local
+/.env.test
+/.env.test.local
+
+# Archivos de Docker
+docker-compose.override.yml
+/.docker
+/.dockerignore
+
+# Archivos generados por el sistema o IDEs
+.DS_Store
+.idea/
+.vscode/
