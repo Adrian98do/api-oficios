@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: ./.docker/php/   # Ruta hacia el Dockerfile personalizado en la carpeta docker/php
+      dockerfile: Dockerfile
+    container_name: symfony_app
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8000:8000
+    environment:
+      APP_ENV: dev
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: symfony_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: symfony_api
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+    ports:
+      - 3306:3306
