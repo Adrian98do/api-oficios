@@ -2,26 +2,38 @@
 
 namespace App\Domain\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Uid\Uuid;
+
+#[ORM\Entity]
 class Company
 {
+    #[ORM\Id]
+    #[ORM\Column(type: 'string', length: 36, unique: true)]
     private string $id;
-    private string $name;
-    private string $cif;
-    private string $address;
-    private int $phoneNumber;
-    private int $contactUser;
 
-    public function __construct(string $id, string $name, string $cif, string $address, int $phoneNumber, int $contactUser)
+    #[ORM\Column(type: 'string', length: 255)]
+    private string $name;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private string $cif;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private string $address;
+
+    #[ORM\Column(type: 'integer')]
+    private int $phoneNumber;
+
+    public function __construct(string $name, string $cif, string $address, int $phoneNumber)
     {
-        $this->id = $id;
+        // Generar UUID usando Symfony\Component\Uid\Uuid
+        $this->id = Uuid::v4()->toRfc4122();
         $this->name = $name;
         $this->cif = $cif;
         $this->address = $address;
         $this->phoneNumber = $phoneNumber;
-        $this->contactUser = $contactUser;
     }
 
-    // Getters
     public function getId(): string
     {
         return $this->id;
@@ -46,16 +58,4 @@ class Company
     {
         return $this->phoneNumber;
     }
-
-    public function getContactUser(): int
-    {
-        return $this->contactUser;
-    }
-
-    // Setters (si son necesarios)
-    public function setContactUser(int $contactUser): void
-    {
-        $this->contactUser = $contactUser;
-    }
 }
-?>

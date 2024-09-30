@@ -15,14 +15,14 @@ class DoctrineCompanyRepository implements CompanyRepository
         $this->entityManager = $entityManager;
     }
 
-    public function findById(string $id): ?Company
-    {
-        return $this->entityManager->find(Company::class, $id);
-    }
-
     public function findAll(): array
     {
         return $this->entityManager->getRepository(Company::class)->findAll();
+    }
+
+    public function findById(string $id): ?Company
+    {
+        return $this->entityManager->find(Company::class, $id);
     }
 
     public function save(Company $company): void
@@ -37,4 +37,3 @@ class DoctrineCompanyRepository implements CompanyRepository
         $this->entityManager->flush();
     }
 }
-?>

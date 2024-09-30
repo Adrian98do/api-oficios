@@ -14,6 +14,7 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -32,6 +33,7 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
             'Symfony\\Component\\VarExporter\\' => 30,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\String\\' => 25,
+            'Symfony\\Component\\Stopwatch\\' => 28,
             'Symfony\\Component\\Runtime\\' => 26,
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\HttpKernel\\' => 29,
@@ -46,6 +48,13 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
+            'Symfony\\Bridge\\Doctrine\\' => 24,
+        ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\Doctrine\\' => 21,
+            'Ramsey\\Uuid\\' => 12,
+            'Ramsey\\Collection\\' => 18,
         ),
         'P' => 
         array (
@@ -53,6 +62,27 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\SqlFormatter\\' => 22,
+            'Doctrine\\Persistence\\' => 21,
+            'Doctrine\\ORM\\' => 13,
+            'Doctrine\\Migrations\\' => 20,
+            'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Inflector\\' => 19,
+            'Doctrine\\Deprecations\\' => 22,
+            'Doctrine\\DBAL\\' => 14,
+            'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Collections\\' => 28,
+            'Doctrine\\Common\\Cache\\' => 22,
+            'Doctrine\\Common\\' => 16,
+            'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
+            'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
+        ),
+        'B' => 
+        array (
+            'Brick\\Math\\' => 11,
         ),
         'A' => 
         array (
@@ -114,6 +144,10 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
         array (
             0 => __DIR__ . '/..' . '/symfony/string',
         ),
+        'Symfony\\Component\\Stopwatch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/stopwatch',
+        ),
         'Symfony\\Component\\Runtime\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/runtime',
@@ -170,6 +204,22 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
         array (
             0 => __DIR__ . '/..' . '/symfony/framework-bundle',
         ),
+        'Symfony\\Bridge\\Doctrine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
+        ),
+        'Ramsey\\Uuid\\Doctrine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid-doctrine/src',
+        ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
+        'Ramsey\\Collection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -185,6 +235,66 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'Doctrine\\SqlFormatter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/sql-formatter/src',
+        ),
+        'Doctrine\\Persistence\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence',
+        ),
+        'Doctrine\\ORM\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/orm/src',
+        ),
+        'Doctrine\\Migrations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/migrations/src',
+        ),
+        'Doctrine\\Instantiator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
+        ),
+        'Doctrine\\Deprecations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/deprecations/lib/Doctrine/Deprecations',
+        ),
+        'Doctrine\\DBAL\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/dbal/src',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/src',
+        ),
+        'Doctrine\\Common\\Collections\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/collections/src',
+        ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
+        ),
+        'Doctrine\\Bundle\\MigrationsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle',
+        ),
+        'Doctrine\\Bundle\\DoctrineBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle/src',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
         ),
         'App\\Tests\\' => 
         array (
