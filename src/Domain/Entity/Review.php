@@ -2,25 +2,42 @@
 
 namespace App\Domain\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use Doctrine\ORM\Mapping as ORM;
+use App\Domain\ValueObject\ReviewMessage;
+
+#[ORM\Entity]
+#[ApiResource]
 class Review
 {
-    private string $id;
-    private int $rate;
-    private string $message;
-    private string $userId;
-    private string $companyId;
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    private int $id;
 
-    public function __construct(string $id, int $rate, string $message, string $userId, string $companyId)
+    #[ORM\Column(type: 'integer')]
+    private int $rate;
+
+    #[ORM\Embedded(class: ReviewMessage::class)]
+    private ReviewMessage $message;
+
+    #[ORM\Column(type: 'integer')]
+    private int $userId;
+
+    #[ORM\Column(type: 'integer')]
+    private int $companyId;
+
+    public function __construct(int $rate, ReviewMessage $message, int $userId, int $companyId)
     {
-        $this->id = $id;
         $this->rate = $rate;
         $this->message = $message;
         $this->userId = $userId;
         $this->companyId = $companyId;
     }
 
-    // Getters
-    public function getId(): string
+    // Getters y Setters
+
+    public function getId(): int
     {
         return $this->id;
     }
@@ -30,19 +47,38 @@ class Review
         return $this->rate;
     }
 
-    public function getMessage(): string
+    public function setRate(int $rate): void
+    {
+        $this->rate = $rate;
+    }
+
+    public function getMessage(): ReviewMessage
     {
         return $this->message;
     }
 
-    public function getUserId(): string
+    public function setMessage(ReviewMessage $message): void
+    {
+        $this->message = $message;
+    }
+
+    public function getUserId(): int
     {
         return $this->userId;
     }
 
-    public function getCompanyId(): string
+    public function setUserId(int $userId): void
+    {
+        $this->userId = $userId;
+    }
+
+    public function getCompanyId(): int
     {
         return $this->companyId;
     }
+
+    public function setCompanyId(int $companyId): void
+    {
+        $this->companyId = $companyId;
+    }
 }
-?>

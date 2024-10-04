@@ -5,6 +5,7 @@ namespace App\Domain\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\Uuid;
+use App\Domain\ValueObject\Cif;
 
 
 #[ORM\Entity]
@@ -18,8 +19,8 @@ class Company
     #[ORM\Column(type: 'string', length: 255)]
     private string $name;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private string $cif;
+    #[ORM\Embedded(class: Cif::class)]
+    private Cif $cif;
 
     #[ORM\Column(type: 'string', length: 255)]
     private string $address;

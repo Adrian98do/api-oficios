@@ -5,15 +5,14 @@ namespace App\Domain\ValueObject;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Embeddable]
-class Cif
+class ReviewMessage
 {
     private string $value;
 
     public function __construct(string $value)
     {
-        // Puedes añadir aquí cualquier lógica de validación para el CIF
-        if (!$this->isValidCif($value)) {
-            throw new \InvalidArgumentException("CIF no es válido");
+        if (strlen($value) < 10) {
+            throw new \InvalidArgumentException("El mensaje de la reseña debe tener al menos 10 caracteres.");
         }
 
         $this->value = $value;
@@ -27,11 +26,5 @@ class Cif
     public function __toString(): string
     {
         return $this->value;
-    }
-
-    private function isValidCif(string $value): bool
-    {
-        // Añade aquí la lógica para validar el CIF
-        return strlen($value) === 9; // Ejemplo simple
     }
 }
