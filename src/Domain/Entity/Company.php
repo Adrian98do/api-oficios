@@ -2,10 +2,13 @@
 
 namespace App\Domain\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\Uuid;
 
+
 #[ORM\Entity]
+#[ApiResource]
 class Company
 {
     #[ORM\Id]
@@ -26,13 +29,14 @@ class Company
 
     public function __construct(string $name, string $cif, string $address, int $phoneNumber)
     {
-        // Generar UUID usando Symfony\Component\Uid\Uuid
         $this->id = Uuid::v4()->toRfc4122();
         $this->name = $name;
         $this->cif = $cif;
         $this->address = $address;
         $this->phoneNumber = $phoneNumber;
     }
+
+    // Getters y Setters
 
     public function getId(): string
     {
@@ -44,9 +48,19 @@ class Company
         return $this->name;
     }
 
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
     public function getCif(): string
     {
         return $this->cif;
+    }
+
+    public function setCif(string $cif): void
+    {
+        $this->cif = $cif;
     }
 
     public function getAddress(): string
@@ -54,8 +68,18 @@ class Company
         return $this->address;
     }
 
+    public function setAddress(string $address): void
+    {
+        $this->address = $address;
+    }
+
     public function getPhoneNumber(): int
     {
         return $this->phoneNumber;
+    }
+
+    public function setPhoneNumber(int $phoneNumber): void
+    {
+        $this->phoneNumber = $phoneNumber;
     }
 }
