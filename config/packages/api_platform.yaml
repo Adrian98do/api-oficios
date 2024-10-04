@@ -6,7 +6,6 @@ api_platform:
     enable_swagger_ui: true
     enable_re_doc: true
     formats:
-        jsonld: ['application/ld+json']
         json: ['application/json']
     defaults:
         stateless: true

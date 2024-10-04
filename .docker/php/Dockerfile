@@ -2,6 +2,7 @@
 FROM php:8.2-fpm
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
+
 # Instalar las dependencias necesarias para Symfony
 RUN apt-get update && apt-get install -y \
     git \
@@ -15,6 +16,12 @@ RUN apt-get update && apt-get install -y \
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     php -r "unlink('composer-setup.php');"
+
+# Instalar PHPUnit globalmente
+RUN composer global require phpunit/phpunit --prefer-dist --dev
+
+# Añadir PHPUnit al PATH global
+ENV PATH="/root/.composer/vendor/bin:${PATH}"
 
 WORKDIR /var/www/html
 
