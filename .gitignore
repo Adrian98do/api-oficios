@@ -17,6 +17,9 @@ docker-compose.override.yml
 /.docker
 /.dockerignore
 
+# Bundles
+public/bundles/*
+
 # Archivos generados por el sistema o IDEs
 .DS_Store
 .idea/

@@ -7,7 +7,7 @@ PHP_CONTAINER = symfony_app # Cambia esto por el nombre de tu contenedor PHP
 # Comandos de Docker
 up:
 	@$(DOCKER_COMPOSE) up --build -d
-	@$(MAKE) symfony-server
+	@$(MAKE) start-symfony-server
 
 down:
 	@$(DOCKER_COMPOSE) down
@@ -30,4 +30,4 @@ routes:
 
 # Ejecutar tests dentro del contenedor
 test:
-	@docker exec -it $(PHP_CONTAINER) php bin/phpunit
+	@docker exec -it $(PHP_CONTAINER) phpunit

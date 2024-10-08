@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"App\\Tests\\Domain\\ValueObject\\CifTest::testValidCif":0,"App\\Tests\\Domain\\ValueObject\\CifTest::testInvalidCifLength":0,"App\\Tests\\Domain\\ValueObject\\CifTest::testInvalidCifCharacters":0.004}}
