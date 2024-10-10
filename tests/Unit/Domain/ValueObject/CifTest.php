@@ -4,7 +4,7 @@ namespace App\Tests\Domain\ValueObject;
 
 use PHPUnit\Framework\TestCase;
 use App\Domain\ValueObject\Cif;
-
+    
 class CifTest extends TestCase
 {
     public function testValidCif(): void

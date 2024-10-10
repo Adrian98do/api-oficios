@@ -12,16 +12,15 @@
     stopOnWarning="false"
     stopOnRisky="false"
 >
+    <php>
+        <server name="KERNEL_CLASS" value="App\Kernel"/>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="memory_limit" value="-1"/>
+        <server name="APP_ENV" value="test"/>
+    </php>
     <testsuites>
         <testsuite name="Application Test Suite">
             <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
-
-    <php>
-        <ini name="error_reporting" value="-1"/>
-        <ini name="memory_limit" value="-1"/>
-        <server name="APP_ENV" value="test"/>
-    </php>
-
 </phpunit>

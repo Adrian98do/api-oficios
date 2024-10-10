@@ -3,6 +3,7 @@
 namespace App\Domain\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use App\Domain\ValueObject\CompanyId;
 use Doctrine\ORM\Mapping as ORM;
 use App\Domain\ValueObject\Email;
 
@@ -27,10 +28,10 @@ class User
     #[ORM\Column(type: 'string', length: 255)]
     private string $password;
 
-    #[ORM\Column(type: 'integer', nullable: true)]
-    private ?int $companyId = null;
+    #[ORM\Embedded(class: CompanyId::class)]
+    private ?CompanyId $companyId = null;
 
-    public function __construct(string $name, string $lastname, Email $email, string $password, ?int $companyId = null)
+    public function __construct(string $name, string $lastname, Email $email, string $password, ?CompanyId $companyId = null)
     {
         $this->name = $name;
         $this->lastname = $lastname;
@@ -86,12 +87,12 @@ class User
         $this->password = $password;
     }
 
-    public function getCompanyId(): ?int
+    public function getCompanyId(): ?CompanyId
     {
         return $this->companyId;
     }
 
-    public function setCompanyId(?int $companyId): void
+    public function setCompanyId(?CompanyId $companyId): void
     {
         $this->companyId = $companyId;
     }
